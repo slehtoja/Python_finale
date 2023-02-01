@@ -25,4 +25,3 @@ class Controller:
 
     def click_btn_clear(self):
         self.view.btn_clear['state'] = 'normal'
-
