@@ -10,12 +10,12 @@ class View(Tk):
         self.model = model
 
         # Window properties
-        self.geometry('600x400')
+        self.geometry('900x400')
         self.title('Python Finale')
         self.center(self)
 
         # Create three frames
-        self.frame_top, self.frame_bottom = self.create_two_frames()
+        self.frame_top, self.frame_bottom, self.frame_name, self.frame_task, frame_shuffle = self.create_frames()
 
         # Create all buttons
         self.btn_name, self.btn_task, self.btn_shuffle, self.btn_save, self.btn_clear = self.create_all_buttons()
@@ -42,14 +42,24 @@ class View(Tk):
         win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
         win.deiconify()
 
-    def create_two_frames(self):
+    def create_frames(self):
         frame_top = Frame(self, bg='#0096FF', height=50)  # blue
         frame_bottom = Frame(self)  # yellow
 
         frame_top.pack(fill='both')
         frame_bottom.pack(expand=True, fill='both')
 
-        return frame_top, frame_bottom  # method return two objects
+        # Create name frame
+        frame_name = Frame(frame_bottom, bg='white', width=290, height=360)
+        frame_name.grid(row=0, column=3, rowspan=4, padx=5, pady=5)
+        # Create task frame
+        frame_task = Frame(frame_bottom, bg='white', width=290, height=360)
+        frame_task.grid(row=0, column=6, rowspan=8, padx=5, pady=5)
+        # Create shuffle frame
+        frame_shuffle = Frame(frame_bottom, bg='white', width=290, height=360)
+        frame_shuffle.grid(row=0, column=9, rowspan=8, padx=5, pady=5)
+
+        return frame_top, frame_bottom, frame_name, frame_task, frame_shuffle  # method return two objects
 
     def create_all_buttons(self):
         # Create button name
