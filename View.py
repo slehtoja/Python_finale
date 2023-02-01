@@ -8,6 +8,9 @@ class View(Tk):
         self.controller = controller
         self.model = model
 
+    def main(self):
+        self.mainloop()
+
     @staticmethod
     def center(win):
         """
@@ -26,3 +29,5 @@ class View(Tk):
         y = win.winfo_screenheight() // 2 - win_height // 2
         win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
         win.deiconify()
+
+

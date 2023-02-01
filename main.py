@@ -1,7 +1,10 @@
+from Controller import Controller
+
+
 class Python_finale:
 
     def __init__(self):
-        pass
+        Controller().main()
 
 
 if __name__ == '__main__':
