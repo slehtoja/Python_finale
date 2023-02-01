@@ -67,9 +67,6 @@ class View(Tk):
 
         return textbox_name, textbox_task, textbox_shuffle
 
-
-
-
     def create_all_buttons(self):
         # Create button name
         btn_name = Button(self.frame_top, text='Name', font=self.default_style,
