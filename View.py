@@ -13,6 +13,9 @@ class View(Tk):
         self.title('Python Finale')
         self.center(self)
 
+        # Create three frames
+        self.frame_top, self.frame_bottom = self.create_two_frames()
+
     def main(self):
         self.mainloop()
 
@@ -34,3 +37,12 @@ class View(Tk):
         y = win.winfo_screenheight() // 2 - win_height // 2
         win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
         win.deiconify()
+
+    def create_two_frames(self):
+        frame_top = Frame(self, bg='#0096FF', height=50)  # blue
+        frame_bottom = Frame(self)  # yellow
+
+        frame_top.pack(fill='both')
+        frame_bottom.pack(expand=True, fill='both')
+
+        return frame_top, frame_bottom  # method return two objects
