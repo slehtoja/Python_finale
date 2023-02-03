@@ -1,6 +1,7 @@
 from tkinter import filedialog, INSERT
 from tkinter import messagebox as mes
 
+
 from Model import Model
 from View import View
 
@@ -18,7 +19,7 @@ class Controller:
         names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_names.delete('1.0', 'end')
         self.model.open_file_names(names)
-        # print(names)
+        # TODO KUI FAILI EI VALITUD SIIS NÄITAB MESSAGE BOX
         if len(self.model.names) > 0:
             for names in self.model.names:
                 self.view.textbox_names.insert(INSERT, names + '\n')
@@ -27,7 +28,7 @@ class Controller:
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_task.delete('1.0', 'end')
         self.model.open_file_task(task)
-        # print(task)
+        # TODO KUI FAILI EI VALITUD SIIS NÄITAB MESSAGE BOX
         if len(self.model.task) > 0:
             for task in self.model.task:
                 self.view.textbox_task.insert(INSERT, task + '\n')
@@ -41,10 +42,23 @@ class Controller:
             x = 0
             for name in self.model.names:
                 self.view.textbox_shuffle.insert(INSERT, name + ' - ' + self.model.task[x] + '\n')
+                self.model.shuffle.append(name + " - " + self.model.task[x])
                 x += 1
 
     def click_btn_save(self):
-        self.view.btn_save['state'] = 'disabled'
+        final = filedialog.asksaveasfilename(
+            filetypes=[("txt file", ".txt")],
+            defaultextension=".txt",
+            initialdir='D:\\my_data\\my_html\\')
+        print(final)
+        if final != "":
+            """ File exists"""
+            with open(final, "a", encoding="utf-8") as f:
+                for save in self.model.shuffle:
+                    f.write(save + "\n")
+
+        # TODO kui panen cancle error 2x
+        # TODO enne salvestamist kontrollida kas 3. listis on midagi enne kui salvestada saab
 
     def click_btn_clear(self):
         self.view.btn_clear['state'] = 'disabled'

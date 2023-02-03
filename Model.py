@@ -28,4 +28,3 @@ class Model:
 
     def shuffle_list(self):
         random.shuffle(self.task)
-
