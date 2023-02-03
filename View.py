@@ -22,7 +22,7 @@ class View(Tk):
         self.textbox_names, self.textbox_task, self.textbox_shuffle = self.create_textbox()
 
         # Create all buttons
-        self.btn_names, self.btn_task, self.btn_shuffle, self.btn_save, self.btn_clear = self.create_all_buttons()
+        self.btn_names, self.btn_task, self.btn_shuffle, self.btn_save = self.create_all_buttons()
 
     def main(self):
         self.mainloop()
@@ -81,14 +81,10 @@ class View(Tk):
         # Create button save
         btn_save = Button(self.frame_top, text='Save', font=self.default_style,
                           command=self.controller.click_btn_save)
-        # Create button clear
-        btn_clear = Button(self.frame_top, text='clear', font=self.default_style,
-                           command=self.controller.click_btn_clear)
 
         btn_names.grid(row=0, column=0, padx=5, pady=2, sticky=EW)
         btn_task.grid(row=0, column=2, padx=5, pady=2, sticky=EW)
         btn_shuffle.grid(row=0, column=4, padx=5, pady=2, sticky=EW)
         btn_save.grid(row=0, column=6, padx=5, pady=2, sticky=EW)
-        btn_clear.grid(row=0, column=8, padx=5, pady=2, sticky=EW)
 
-        return btn_names, btn_task, btn_shuffle, btn_save, btn_clear
+        return btn_names, btn_task, btn_shuffle, btn_save

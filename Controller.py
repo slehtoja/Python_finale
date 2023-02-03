@@ -60,5 +60,3 @@ class Controller:
         # TODO kui panen cancle error 2x
         # TODO enne salvestamist kontrollida kas 3. listis on midagi enne kui salvestada saab
 
-    def click_btn_clear(self):
-        self.view.btn_clear['state'] = 'disabled'
