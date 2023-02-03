@@ -1,3 +1,4 @@
+import random
 
 
 class Model:
@@ -22,3 +23,6 @@ class Model:
                 line = line.strip()
                 self.task.append(line)
             # print(self.task)
+
+    def shuffle_list(self):
+        random.shuffle(self.task)

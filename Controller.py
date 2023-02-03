@@ -30,7 +30,12 @@ class Controller:
                 self.view.textbox_task.insert(INSERT, task + '\n')
 
     def click_btn_shuffle(self):
-        self.view.btn_shuffle['state'] = 'disabled'
+        self.view.textbox_shuffle.delete('1.0', 'end')
+        self.model.shuffle_list()
+        for task in self.model.task:
+            self.view.textbox_shuffle.insert(INSERT, task + '\n')
+        for names in self.model.names:
+            self.view.textbox_shuffle.insert(INSERT, names + '\n')
 
     def click_btn_save(self):
         self.view.btn_save['state'] = 'disabled'
