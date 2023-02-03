@@ -1,4 +1,5 @@
 from tkinter import filedialog, INSERT
+from tkinter import messagebox as mes
 
 from Model import Model
 from View import View
@@ -32,12 +33,15 @@ class Controller:
                 self.view.textbox_task.insert(INSERT, task + '\n')
 
     def click_btn_shuffle(self):
-        self.view.textbox_shuffle.delete('1.0', 'end')
-        self.model.shuffle_list()
-        x = 0
-        for name in self.model.names:
-            self.view.textbox_shuffle.insert(INSERT, name + ' - ' + self.model.task[x] + '\n')
-            x += 1
+        if len(self.model.names) > len(self.model.task):
+            mes.showerror('Error', 'List on liiga lühike')
+        else:
+            self.view.textbox_shuffle.delete('1.0', 'end')
+            self.model.shuffle_list()
+            x = 0
+            for name in self.model.names:
+                self.view.textbox_shuffle.insert(INSERT, name + ' - ' + self.model.task[x] + '\n')
+                x += 1
 
     def click_btn_save(self):
         self.view.btn_save['state'] = 'disabled'
