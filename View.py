@@ -18,6 +18,7 @@ class View(Tk):
         # Create three frames
         self.frame_top, self.frame_bottom = self.create_frames()
 
+        # create textbox
         self.textbox_names, self.textbox_task, self.textbox_shuffle = self.create_textbox()
 
         # Create all buttons
