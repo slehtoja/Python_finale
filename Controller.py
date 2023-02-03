@@ -60,8 +60,4 @@ class Controller:
                     for save in self.model.shuffle:
                         f.write(save + "\n")
 
-
-
-        # TODO enne salvestamist kontrollida kas 3. listis on midagi enne kui salvestada saab
         # TODO create button clear
-
