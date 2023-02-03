@@ -16,22 +16,22 @@ class Controller:
         self.view.main()
 
     def click_btn_names(self):
-        names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_names.delete('1.0', 'end')
-        self.model.open_file_names(names)
-        # TODO KUI FAILI EI VALITUD SIIS NÄITAB MESSAGE BOX
-        if len(self.model.names) > 0:
-            for names in self.model.names:
-                self.view.textbox_names.insert(INSERT, names + '\n')
+        names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
+        if names != '':
+            self.model.open_file_names(names)
+            if len(self.model.names) > 0:
+                for names in self.model.names:
+                    self.view.textbox_names.insert(INSERT, names + '\n')
 
     def click_btn_task(self):
-        task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_task.delete('1.0', 'end')
-        self.model.open_file_task(task)
-        # TODO KUI FAILI EI VALITUD SIIS NÄITAB MESSAGE BOX
-        if len(self.model.task) > 0:
-            for task in self.model.task:
-                self.view.textbox_task.insert(INSERT, task + '\n')
+        task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
+        if task != '':
+            self.model.open_file_task(task)
+            if len(self.model.task) > 0:
+                for task in self.model.task:
+                    self.view.textbox_task.insert(INSERT, task + '\n')
 
     def click_btn_shuffle(self):
         if len(self.model.names) > len(self.model.task):
@@ -46,17 +46,18 @@ class Controller:
                 x += 1
 
     def click_btn_save(self):
-        final = filedialog.asksaveasfilename(
-            filetypes=[("txt file", ".txt")],
-            defaultextension=".txt",
-            initialdir='D:\\my_data\\my_html\\')
-        print(final)
-        if final != "":
-            """ File exists"""
-            with open(final, "a", encoding="utf-8") as f:
-                for save in self.model.shuffle:
-                    f.write(save + "\n")
+        if self.model.shuffle != "":
+            mes.showerror('Error', 'List on liiga lühike')
+            shuffle = filedialog.asksaveasfilename(
+                filetypes=[("txt file", ".txt")],
+                defaultextension=".txt",
+                initialdir='D:\\my_data\\my_html\\')
+            print(shuffle)
+            if shuffle != "":
+                """ File exists"""
+                with open(shuffle, "a", encoding="utf-8") as f:
+                    for save in self.model.shuffle:
+                        f.write(save + "\n")
 
-        # TODO kui panen cancle error 2x
         # TODO enne salvestamist kontrollida kas 3. listis on midagi enne kui salvestada saab
 
