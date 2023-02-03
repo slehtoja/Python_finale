@@ -21,7 +21,7 @@ class View(Tk):
         self.textbox_name, self.textbox_task, self.textbox_shuffle = self.create_textbox()
 
         # Create all buttons
-        self.btn_name, self.btn_task, self.btn_shuffle, self.btn_save, self.btn_clear = self.create_all_buttons()
+        self.btn_names, self.btn_task, self.btn_shuffle, self.btn_save, self.btn_clear = self.create_all_buttons()
 
     def main(self):
         self.mainloop()
@@ -68,12 +68,12 @@ class View(Tk):
         return textbox_name, textbox_task, textbox_shuffle
 
     def create_all_buttons(self):
-        # Create button name
-        btn_name = Button(self.frame_top, text='Name', font=self.default_style,
-                          command=self.controller.click_btn_name)
+        # Create button names
+        btn_names = Button(self.frame_top, text='Name', font=self.default_style,
+                           command=self.controller.click_btn_names)
         # Create button job
         btn_task = Button(self.frame_top, text='Task', font=self.default_style,
-                          command=self.controller.click_btn_job)
+                          command=self.controller.click_btn_task)
         # Create button shuffle
         btn_shuffle = Button(self.frame_top, text='Shuffle', font=self.default_style,
                              command=self.controller.click_btn_shuffle)
@@ -84,10 +84,10 @@ class View(Tk):
         btn_clear = Button(self.frame_top, text='clear', font=self.default_style,
                            command=self.controller.click_btn_clear)
 
-        btn_name.grid(row=0, column=0, padx=5, pady=2, sticky=EW)
+        btn_names.grid(row=0, column=0, padx=5, pady=2, sticky=EW)
         btn_task.grid(row=0, column=2, padx=5, pady=2, sticky=EW)
         btn_shuffle.grid(row=0, column=4, padx=5, pady=2, sticky=EW)
         btn_save.grid(row=0, column=6, padx=5, pady=2, sticky=EW)
         btn_clear.grid(row=0, column=8, padx=5, pady=2, sticky=EW)
 
-        return btn_name, btn_task, btn_shuffle, btn_save, btn_clear
+        return btn_names, btn_task, btn_shuffle, btn_save, btn_clear
