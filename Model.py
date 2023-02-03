@@ -11,6 +11,7 @@ class Model:
         with open(filename, "r", encoding="utf-8") as f:
             all_lines = f.readlines()
             for line in all_lines:
+                line = line.strip()
                 self.names.append(line)
             # print(self.names)
 
@@ -18,8 +19,6 @@ class Model:
         with open(filename, "r", encoding="utf-8") as f:
             all_lines = f.readlines()
             for line in all_lines:
+                line = line.strip()
                 self.task.append(line)
             # print(self.task)
-
-
-

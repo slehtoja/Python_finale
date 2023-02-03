@@ -11,14 +11,14 @@ class View(Tk):
         self.model = model
 
         # Window properties
-        self.geometry('700x400')
+        self.geometry('1000x500')
         self.title('Python Finale')
         self.center(self)
 
         # Create three frames
         self.frame_top, self.frame_bottom = self.create_frames()
 
-        self.textbox_name, self.textbox_task, self.textbox_shuffle = self.create_textbox()
+        self.textbox_names, self.textbox_task, self.textbox_shuffle = self.create_textbox()
 
         # Create all buttons
         self.btn_names, self.btn_task, self.btn_shuffle, self.btn_save, self.btn_clear = self.create_all_buttons()
@@ -56,16 +56,16 @@ class View(Tk):
 
     def create_textbox(self):
         # Create name textbox
-        textbox_name = tkinter.Text(self.frame_bottom, height=22, width=20)
-        textbox_name.grid(row=0, column=3, rowspan=6, padx=5, pady=5)
+        textbox_names = tkinter.Text(self.frame_bottom, height=28, width=20)
+        textbox_names.grid(row=0, column=3, rowspan=6, padx=5, pady=5)
         # Create task textbox
-        textbox_task = tkinter.Text(self.frame_bottom, height=22, width=20)
+        textbox_task = tkinter.Text(self.frame_bottom, height=28, width=50)
         textbox_task.grid(row=0, column=6, rowspan=6, padx=5, pady=5)
         # Create shuffle textbox
-        textbox_shuffle = tkinter.Text(self.frame_bottom, height=22, width=42)
+        textbox_shuffle = tkinter.Text(self.frame_bottom, height=28, width=50)
         textbox_shuffle.grid(row=0, column=9, rowspan=6, padx=5, pady=5)
 
-        return textbox_name, textbox_task, textbox_shuffle
+        return textbox_names, textbox_task, textbox_shuffle
 
     def create_all_buttons(self):
         # Create button names
