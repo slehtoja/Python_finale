@@ -9,6 +9,7 @@ class Model:
         self.shuffle = []
 
     def open_file_names(self, filename):
+        self.names = []
         with open(filename, "r", encoding="utf-8") as f:
             all_lines = f.readlines()
             for line in all_lines:
@@ -17,6 +18,7 @@ class Model:
             # print(self.names)
 
     def open_file_task(self, filename):
+        self.task = []
         with open(filename, "r", encoding="utf-8") as f:
             all_lines = f.readlines()
             for line in all_lines:
