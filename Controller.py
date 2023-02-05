@@ -28,7 +28,6 @@ class Controller:
         self.view.textbox_task.delete('1.0', 'end')
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         if task != '':
-            mes.showerror('Error', 'Valitu fail on tühi')
             self.model.open_file_task(task)
             if len(self.model.task) > 0:
                 for task in self.model.task:
@@ -60,4 +59,7 @@ class Controller:
                         f.write(save + "\n")
 
     def click_btn_clear(self):
-        pass
+        self.view.textbox_names.delete('1.0', 'end')
+        self.view.textbox_task.delete('1.0', 'end')
+        self.view.textbox_shuffle.delete('1.0', 'end')
+

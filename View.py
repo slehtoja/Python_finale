@@ -83,7 +83,7 @@ class View(Tk):
                           command=self.controller.click_btn_save)
         # Create button clear
         btn_clear = Button(self.frame_top, text='Clear', font=self.default_style,
-                          command=self.controller.click_btn_save)
+                          command=self.controller.click_btn_clear)
 
 
         btn_names.grid(row=0, column=0, padx=5, pady=2, sticky=EW)
