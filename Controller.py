@@ -33,6 +33,7 @@ class Controller:
                 for task in self.model.task:
                     self.view.textbox_task.insert(INSERT, task + '\n')
 
+
     def click_btn_shuffle(self):
         if len(self.model.names) > len(self.model.task):
             mes.showerror('Error', 'List on liiga lühike')
