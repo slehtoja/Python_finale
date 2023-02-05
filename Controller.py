@@ -16,8 +16,8 @@ class Controller:
         self.view.main()
 
     def click_btn_names(self):
-        self.view.textbox_names.delete('1.0', 'end')
         names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
+        self.view.textbox_names.delete('1.0', 'end')
         if names != '':
             self.model.open_file_names(names)
             if len(self.model.names) > 0:
@@ -25,8 +25,8 @@ class Controller:
                     self.view.textbox_names.insert(INSERT, names + '\n')
 
     def click_btn_task(self):
-        self.view.textbox_task.delete('1.0', 'end')
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
+        self.view.textbox_task.delete('1.0', 'end')
         if task != '':
             self.model.open_file_task(task)
             if len(self.model.task) > 0:
