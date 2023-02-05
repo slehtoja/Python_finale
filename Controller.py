@@ -1,3 +1,4 @@
+import os.path
 from tkinter import filedialog, INSERT
 from tkinter import messagebox as mes
 
@@ -18,7 +19,9 @@ class Controller:
     def click_btn_names(self):
         names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_names.delete('1.0', 'end')
-        if names != '':
+        if os.path.getsize(names) == 0:
+            mes.showerror('Error', 'Fail on tühi')
+        else:
             self.model.open_file_names(names)
             if len(self.model.names) > 0:
                 for names in self.model.names:
@@ -27,7 +30,9 @@ class Controller:
     def click_btn_task(self):
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_task.delete('1.0', 'end')
-        if task != '':
+        if os.path.getsize(task) == 0:
+            mes.showerror('Error', 'Fail on tühi')
+        else:
             self.model.open_file_task(task)
             if len(self.model.task) > 0:
                 for task in self.model.task:
