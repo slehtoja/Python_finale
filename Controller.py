@@ -19,25 +19,21 @@ class Controller:
     def click_btn_names(self):
         names = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_names.delete('1.0', 'end')
-        if os.path.getsize(names) == 0:
-            mes.showerror('Error', 'Fail on tühi')
-        else:
+        if names != '':
             self.model.open_file_names(names)
             if len(self.model.names) > 0:
                 for names in self.model.names:
                     self.view.textbox_names.insert(INSERT, names + '\n')
 
+
     def click_btn_task(self):
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_task.delete('1.0', 'end')
-        if os.path.getsize(task) == 0:
-            mes.showerror('Error', 'Fail on tühi')
-        else:
+        if task != 0:
             self.model.open_file_task(task)
             if len(self.model.task) > 0:
                 for task in self.model.task:
                     self.view.textbox_task.insert(INSERT, task + '\n')
-
 
     def click_btn_shuffle(self):
         if len(self.model.names) > len(self.model.task):
@@ -57,7 +53,7 @@ class Controller:
                 filetypes=[("txt file", ".txt")],
                 defaultextension=".txt",
                 initialdir='D:\\my_data\\my_html\\')
-            print(shuffle)
+            # print(shuffle)
             if shuffle != '':
                 """ File exists"""
                 with open(shuffle, "a", encoding="utf-8") as f:
