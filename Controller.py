@@ -29,7 +29,7 @@ class Controller:
     def click_btn_task(self):
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])
         self.view.textbox_task.delete('1.0', 'end')
-        if task != 0:
+        if task != '':
             self.model.open_file_task(task)
             if len(self.model.task) > 0:
                 for task in self.model.task:
