@@ -69,4 +69,6 @@ class Controller:
         self.view.textbox_names.delete('1.0', 'end')
         self.view.textbox_task.delete('1.0', 'end')
         self.view.textbox_shuffle.delete('1.0', 'end')
-
+        self.model.names = []
+        self.model.task = []
+        self.model.shuffle = []
