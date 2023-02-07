@@ -24,6 +24,8 @@ class Controller:
             if len(self.model.names) > 0:
                 for names in self.model.names:
                     self.view.textbox_names.insert(INSERT, names + '\n')
+            else:
+                mes.showerror('Error', 'Fail on tühi!')
 
 
     def click_btn_task(self):
@@ -34,10 +36,12 @@ class Controller:
             if len(self.model.task) > 0:
                 for task in self.model.task:
                     self.view.textbox_task.insert(INSERT, task + '\n')
+            else:
+                mes.showerror('Error', 'Fail on tühi!')
 
     def click_btn_shuffle(self):
         if len(self.model.names) > len(self.model.task):
-            mes.showerror('Error', 'List on liiga lühike')
+            mes.showerror('Error', 'List on liiga lühike!')
         else:
             self.view.textbox_shuffle.delete('1.0', 'end')
             self.model.shuffle_list()
