@@ -25,7 +25,7 @@ class Controller:
                 for names in self.model.names:
                     self.view.textbox_names.insert(INSERT, names + '\n')
             else:
-                mes.showerror('Error', 'Fail on tühi!')
+                mes.showerror('Error', 'Valitud fail on tühi!')
 
 
     def click_btn_task(self):
@@ -37,7 +37,7 @@ class Controller:
                 for task in self.model.task:
                     self.view.textbox_task.insert(INSERT, task + '\n')
             else:
-                mes.showerror('Error', 'Fail on tühi!')
+                mes.showerror('Error', 'Valitud fail on tühi!')
 
     def click_btn_shuffle(self):
         self.model.shuffle = []
