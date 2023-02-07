@@ -40,6 +40,7 @@ class Controller:
                 mes.showerror('Error', 'Fail on tühi!')
 
     def click_btn_shuffle(self):
+        self.model.shuffle = []
         if len(self.model.names) > len(self.model.task):
             mes.showerror('Error', 'List on liiga lühike!')
         else:
