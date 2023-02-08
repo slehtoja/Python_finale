@@ -15,7 +15,7 @@ class View(Tk):
         self.title('Python Finale')
         self.center(self)
 
-        # Create three frames
+        # Create Two frames
         self.frame_top, self.frame_bottom = self.create_frames()
 
         # create textbox
@@ -48,10 +48,12 @@ class View(Tk):
 
     def create_frames(self):
         frame_top = Frame(self, bg='#0096FF', height=50)  # blue
-        frame_bottom = Frame(self)  # yellow
+        frame_bottom = Frame(self)
 
         frame_top.pack(fill='both')
         frame_bottom.pack(expand=True, fill='both')
+
+
 
         return frame_top, frame_bottom  # method return two objects
 
