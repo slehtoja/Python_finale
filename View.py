@@ -11,7 +11,7 @@ class View(Tk):
         self.model = model
 
         # Window properties
-        self.geometry('1000x500')
+        self.geometry('1300x500')
         self.title('Python Finale')
         self.center(self)
 
@@ -60,10 +60,10 @@ class View(Tk):
         textbox_names = tkinter.Text(self.frame_bottom, height=28, width=20)
         textbox_names.grid(row=0, column=3, rowspan=6, padx=5, pady=5)
         # Create task textbox
-        textbox_task = tkinter.Text(self.frame_bottom, height=28, width=50)
+        textbox_task = tkinter.Text(self.frame_bottom, height=28, width=60)
         textbox_task.grid(row=0, column=6, rowspan=6, padx=5, pady=5)
         # Create shuffle textbox
-        textbox_shuffle = tkinter.Text(self.frame_bottom, height=28, width=50)
+        textbox_shuffle = tkinter.Text(self.frame_bottom, height=28, width=77)
         textbox_shuffle.grid(row=0, column=9, rowspan=6, padx=5, pady=5)
 
         return textbox_names, textbox_task, textbox_shuffle
