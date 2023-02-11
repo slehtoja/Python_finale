@@ -11,7 +11,7 @@ class View(Tk):
         self.model = model
 
         # Window properties
-        self.geometry('1300x500')
+        self.geometry('1300x495')
         self.title('Python Finale')
         self.center(self)
 
