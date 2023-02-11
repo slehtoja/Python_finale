@@ -1,4 +1,3 @@
-import os.path
 from tkinter import filedialog, INSERT
 from tkinter import messagebox as mes
 
@@ -26,7 +25,6 @@ class Controller:
                     self.view.textbox_names.insert(INSERT, names + '\n')
             else:
                 mes.showerror('Error', 'Valitud fail on tühi!')
-
 
     def click_btn_task(self):
         task = filedialog.askopenfilename(filetypes=[("txt file", ".txt")])

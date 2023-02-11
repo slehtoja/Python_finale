@@ -53,8 +53,6 @@ class View(Tk):
         frame_top.pack(fill='both')
         frame_bottom.pack(expand=True, fill='both')
 
-
-
         return frame_top, frame_bottom  # method return two objects
 
     def create_textbox(self):
@@ -85,8 +83,7 @@ class View(Tk):
                           command=self.controller.click_btn_save)
         # Create button clear
         btn_clear = Button(self.frame_top, text='Clear', font=self.default_style,
-                          command=self.controller.click_btn_clear)
-
+                           command=self.controller.click_btn_clear)
 
         btn_names.grid(row=0, column=0, padx=5, pady=2, sticky=EW)
         btn_task.grid(row=0, column=2, padx=5, pady=2, sticky=EW)
